@@ -72,29 +72,29 @@
                                         <table class="min-w-full ">
                                             <thead class="">
                                                 <tr>
-                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600">
                                                         <div class="flex items-center gap-x-3">
 
                                                             <span>Artist Name</span>
                                                         </div>
                                                     </th>
-                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 ">
                                                         <button class="flex items-center gap-x-2">
                                                             <span>No of songs</span>
 
 
                                                         </button>
                                                     </th>
-                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 ">
                                                        <button class="flex items-center gap-x-2">
                                                            <span>Monthly Listners</span>
                                                        </button>
                                                     </th>
-                                                    <th scope="col" class=" py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">Age</th>
+                                                    <th scope="col" class=" py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 ">Age</th>
 
                                                 </tr>
                                             </thead>
-                                            <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 ">
+                                            <tbody class="bg-white divide-y divide-gray-200  ">
                                             {% for artist in artists %}
                                                 <tr  class="border-t-2">
                                                     <td class=" py-4 text-sm font-medium text-gray-700 whitespace-nowrap ">
@@ -102,7 +102,7 @@
                                                             <img class=" object-cover  rounded-lg " src="{{artist.image.url}}" alt="image description" style="height: 3.8rem; width: 3.8rem;">
 
                                                                 <div>
-                                                                    <h2 class="font-semibold text-gray-800 dark:text-white ">{{artist.name}}</h2>
+                                                                    <h2 class="font-semibold text-gray-800  ">{{artist.name}}</h2>
                                                                 </div>
                                                             </div>
                                                         </div>

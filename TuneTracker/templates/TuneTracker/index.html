@@ -73,7 +73,7 @@
                                         <table class="min-w-full ">
                                             <thead class="">
                                                 <tr>
-                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 ">
                                                         <div class="flex items-center gap-x-3">
 
                                                             <span>Song Name</span>
@@ -82,14 +82,14 @@
 
 
 
-                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 ">
                                                         <button class="flex items-center gap-x-2">
                                                             <span>Streams</span>
 
 
                                                         </button>
                                                     </th>
-                                                  <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                  <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 ">
                                                        <button class="flex items-center gap-x-2">
                                                            <span>Likes</span>
 
@@ -97,11 +97,11 @@
                                                        </button>
                                                    </th>
 
-                                                    <th scope="col" class=" py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400"> Release Date</th>
+                                                    <th scope="col" class=" py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 "> Release Date</th>
 
                                                 </tr>
                                             </thead>
-                                            <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 ">
+                                            <tbody class="bg-white divide-y  ">
                                             {% for song in songs %}
                                                 <tr  class="border-t-2">
                                                     <td class=" py-4 text-sm font-medium text-gray-700 whitespace-nowrap ">
@@ -109,8 +109,8 @@
                                                             <img class=" object-cover  rounded-lg " src="{{song.image.url}}" alt="image description" style="height: 3.8rem; width: 3.8rem;">
 
                                                                 <div>
-                                                                    <h2 class="font-medium text-gray-800 dark:text-white ">{{song.title}}</h2>
-                                                                    <p class="text-sm font-normal text-gray-600 dark:text-gray-400">{{song.artist.name}}</p>
+                                                                    <h2 class="font-medium text-gray-800 ">{{song.title}}</h2>
+                                                                    <p class="text-sm font-normal text-gray-600">{{song.artist.name}}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
