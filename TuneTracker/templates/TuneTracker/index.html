@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Favourites Tunes</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    {% load static %}
+    <style>
+
+        .background-animate {
+          background-size: 400%;
+
+          -webkit-animation: AnimationName 4s ease infinite;
+          -moz-animation: AnimationName 4s ease infinite;
+          animation: AnimationName 4s ease infinite;
+        }
+
+        @keyframes AnimationName {
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+      </style>
+</head>
+
+<body>
+   
+<div class="bg-gradient-to-r
+     from-pink-100
+     via-pink-200
+     to-pink-300
+     background-animate px-12" style="padding-top: 5.3rem;">
+
+     <div class="flex w-full bg-white">
+
+     <div class="min-h-screen  flex flex-row flex-shrink-0">
+         <div class="flex flex-col w-56 bg-[#F8F7F3]  overflow-hidden">
+            <a href="{% url 'tunes.home' %}">
+             <div class="flex items-center justify-center h-20 p-2 " >
+                 <img class="mt-4 "  src="{% static 'common/images/logo1.png' %}"> </img>
+             </div>
+            </a>
+             <ul class="flex flex-col py-4">
+                 <li>
+                     <a href="{% url 'tunes.home' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-star"></i></span>
+                         <span class="text-sm  font-semibold">My Favourites</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="{% url 'tunes.artist' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-music"></i></span>
+                         <span class="text-sm font-medium">Artists</span>
+                     </a>
+                 </li>
+                
+                {% if user.is_authenticated %}
+                 <li>
+
+                     <a href="{% url 'users.logout' %}" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
+                         <span class="text-sm font-medium">Logout</span>
+                     </a>
+                 </li>
+                {% endif %}
+                 <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                            <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-user"></i></span>
+                            <span class="text-sm font-medium">{{user.email}}</span>
+                        </a>
+                    </li>
+
+             </ul>
+         </div>
+     </div>
+        <div class="flex flex-shrink-0 mt-20 flex-grow">
+            <!-- Add your new div here -->
+            <div class="w-full " style="margin-top: 20px; margin-left: 4rem;">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="font-serif font-semibold text-3xl ">My Favourites</div>
+                    </div>
+                    <a href="{% url 'tunes.add_songs' %}">
+                    <button type="button" class="text-black bg-fuchsia-200 hover:bg-fuchsia-300 focus:ring-5 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-l px-4 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-14" style="transition-delay: 0.2s; transition-duration: 0.4s;">
+                        <svg clip-rule="evenodd" class="w-3.5 h-3.5 me-2" fill="currentColor"  aria-hidden="true"  viewBox="0 0 18 21" xmlns="http://www.w3.org/2000/svg"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z" fill-rule="nonzero"/></svg>
+                        Upload Music
+                    </button>
+                </a>
+                </div>
+                <div class="flex">
+                    <section class="container mx-auto my-8">
+                        
+                        <div class="flex flex-col mt-6">
+                            <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                                    <div class="overflow-hidden ">
+                                        <table class="min-w-full ">
+                                            <thead class="">
+                                                <tr>
+                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                        <div class="flex items-center gap-x-3">
+
+                                                            <span>Song Name</span>
+                                                        </div>
+                                                    </th>
+
+
+
+                                                    <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                        <button class="flex items-center gap-x-2">
+                                                            <span>Streams</span>
+
+
+                                                        </button>
+                                                    </th>
+                                                  <th scope="col" class="py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400">
+                                                       <button class="flex items-center gap-x-2">
+                                                           <span>Likes</span>
+
+
+                                                       </button>
+                                                   </th>
+
+                                                    <th scope="col" class=" py-3.5 text-sm font-normal text-left rtl:text-right text-gray-600 dark:text-gray-400"> Release Date</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 ">
+                                            {% for song in songs %}
+                                                <tr  class="border-t-2">
+                                                    <td class=" py-4 text-sm font-medium text-gray-700 whitespace-nowrap ">
+                                                        <div class="inline-flex items-center gap-x-3">
+                                                            <img class=" object-cover  rounded-lg " src="{{song.image.url}}" alt="image description" style="height: 3.8rem; width: 3.8rem;">
+
+                                                                <div>
+                                                                    <h2 class="font-medium text-gray-800 dark:text-white ">{{song.title}}</h2>
+                                                                    <p class="text-sm font-normal text-gray-600 dark:text-gray-400">{{song.artist.name}}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class=" py-4 text-sm text-black  whitespace-nowrap">{{song.streams}}</td>
+                                                    <td class=" py-4 text-sm text-blackwhitespace-nowrap">{{song.likes}}</td>
+                                                    <td class="py-4 text-sm text-black whitespace-nowrap">{{song.release_date}}</td>
+
+                                                </tr>
+
+                                                {% endfor %}
+                                           
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </script>
+  </body>
+
+  </html>
