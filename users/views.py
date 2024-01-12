@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate , login , logout
 from django.contrib import messages
 from .models import Users
 from django.contrib.auth.hashers import make_password
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
 
 
 
@@ -46,7 +48,12 @@ def signup_user(request):
         if(email == '' or password == '' or confirm_password == ''):
             messages.error(request, 'Fields cannot be empty')
             return redirect('users.signup')
-
+         # Validate email
+        try:
+            validate_email(email)
+        except ValidationError:
+            messages.error(request, 'Invalid email')
+            return render(request, 'registration/signup.html')
         if(password != confirm_password):
             messages.error(request, 'Passwords do not match')
             return redirect('users.signup')
